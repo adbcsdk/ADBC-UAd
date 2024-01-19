@@ -9,7 +9,7 @@ import UIKit
 import GoogleMobileAds
 
 public protocol UAdNativeAdLoaderDelegate : AnyObject {
-    func adLoader(_ adLoader: UAdAdLoader, didReceive nativeAd: GADNativeAd)
+    func adLoader(_ adLoader: UAdAdLoader, didReceive nativeAd: UAdNativeAd)
 
     func adLoaderDidFinishLoading(_ adLoader: UAdAdLoader)
 
@@ -18,39 +18,40 @@ public protocol UAdNativeAdLoaderDelegate : AnyObject {
 
 @objcMembers
 public class UAdAdLoader: NSObject {
-    
-    private var adUnitID: String = "ca-app-pub-3940256099942544/4411468910"
+    private var adUnitID: String = "ca-app-pub-3940256099942544/3986624511"
     private var rootViewController: UIViewController
     private var delegate: UAdNativeAdLoaderDelegate
     
     private var adLoader: GADAdLoader!
+    private var nativeAd: UAdNativeAd!
     
     public init(adUnitID: String, rootViewController: UIViewController, delegate: UAdNativeAdLoaderDelegate) {
         self.adUnitID = adUnitID
         self.rootViewController = rootViewController
         self.delegate = delegate
-        
         super.init()
-        
+    }
+    
+    public func load() {
         let multipleAdOptions = GADMultipleAdsAdLoaderOptions()
-        adLoader = GADAdLoader(adUnitID: self.adUnitID, rootViewController: self.rootViewController, adTypes: [ .native ], options: [ multipleAdOptions ])
+        multipleAdOptions.numberOfAds = 5;
+        adLoader = GADAdLoader(adUnitID: adUnitID,
+            rootViewController: rootViewController,
+            adTypes: [ .native ],
+            options: [ multipleAdOptions ])
+
         adLoader.delegate = self
+        adLoader.load(GADRequest())
     }
 }
 
 extension UAdAdLoader: GADNativeAdLoaderDelegate {
     public func adLoader(_ adLoader: GADAdLoader, didReceive nativeAd: GADNativeAd) {
-        // A native ad has loaded, and can be displayed.
-        delegate.adLoader(self, didReceive: nativeAd)
-    }
-
-    public func adLoaderDidFinishLoading(_ adLoader: GADAdLoader) {
-        // The adLoader has finished loading ads, and a new request can be sent.
-        delegate.adLoaderDidFinishLoading(self)
+        self.nativeAd = UAdNativeAd(nativeAd: nativeAd)
+        delegate.adLoader(self, didReceive: self.nativeAd)
     }
     
     public func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: Error) {
         delegate.adLoader(self, didFailToReceiveAdWithError: error)
     }
-
 }

@@ -22,13 +22,14 @@ public class UAdInterstitial: NSObject {
     private let adsType = "interstitial"
     private let status = StatusSendHelper()
     
+    private var isLoaded = false
     private var adUnitID: String = "ca-app-pub-3940256099942544/4411468910"
     private var rootViewController: UIViewController
-    private var delegate: UAdFullScreenContentDelegate
+    private var delegate: UAdFullScreenContentDelegate?
     
     private var interstitial: GADInterstitialAd?
     
-    public init(adUnitID: String, rootViewController: UIViewController, delegate: UAdFullScreenContentDelegate) {
+    public init(adUnitID: String, rootViewController: UIViewController, delegate: UAdFullScreenContentDelegate?) {
         
         self.adUnitID = adUnitID
         self.rootViewController = rootViewController
@@ -37,6 +38,7 @@ public class UAdInterstitial: NSObject {
     
     public func load() {
         
+        if isLoaded { return }
         status.sendStatus(adsType: adsType, status: UAdStatusCode.req, resInfo: nil)
         
         let request = GADRequest()
@@ -65,7 +67,7 @@ public class UAdInterstitial: NSObject {
 
 extension UAdInterstitial: GADFullScreenContentDelegate {
     public func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        delegate.ad(didFailToPresentFullScreenContentWithError: error)
+        delegate?.ad(didFailToPresentFullScreenContentWithError: error)
         
         status.sendStatus(adsType: self.adsType, status: UAdStatusCode.fail, resInfo: nil)
         print("UAdInterstitial ad")
@@ -73,7 +75,7 @@ extension UAdInterstitial: GADFullScreenContentDelegate {
 
     /// Tells the delegate that the ad will present full screen content.
     public func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        delegate.adWillPresentFullScreenContent()
+        delegate?.adWillPresentFullScreenContent()
         
         status.sendStatus(adsType: self.adsType, status: UAdStatusCode.show, resInfo: interstitial?.responseInfo)
         print("UAdInterstitial adWillPresentFullScreenContent")
@@ -81,7 +83,7 @@ extension UAdInterstitial: GADFullScreenContentDelegate {
 
     /// Tells the delegate that the ad dismissed full screen content.
     public func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        delegate.adWillPresentFullScreenContent()
+        delegate?.adWillPresentFullScreenContent()
         
         status.sendStatus(adsType: self.adsType, status: UAdStatusCode.close, resInfo: interstitial?.responseInfo)
         print("UAdInterstitial adDidDismissFullScreenContent")

@@ -36,13 +36,14 @@ public class UAdBannerView: UIView {
     private let adsType = "banner"
     private let status = StatusSendHelper()
     
+    private var isLoaded = false
     private var adUnitID: String = "ca-app-pub-3940256099942544/2934735716"
     private var rootViewController: UIViewController?
     private var delegate: UAdBannerViewDelegate?
     
     private var bannerView: GADBannerView?
     
-    init(adUnitID: String, rootViewController: UIViewController, delegate: UAdBannerViewDelegate) {
+    init(adUnitID: String, rootViewController: UIViewController, delegate: UAdBannerViewDelegate?) {
         
         self.adUnitID = adUnitID
         self.rootViewController = rootViewController
@@ -63,6 +64,9 @@ public class UAdBannerView: UIView {
     }
     
     public func load() {
+        
+        if isLoaded { return }
+        
         bannerView?.load(GADRequest())
     }
     
@@ -79,14 +83,21 @@ public class UAdBannerView: UIView {
         addSubview(bannerView!)
         
         bannerView?.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
+//            make.centerX.equalToSuperview()
+//            make.centerY.equalToSuperview()
+            
+            make.left.equalTo(self.snp.left)
+            make.right.equalTo(self.snp.right)
+            make.top.equalTo(self.snp.top)
+            make.bottom.equalTo(self.snp.bottom)
+            
         }
     }
 }
 
 extension UAdBannerView: GADBannerViewDelegate {
     public func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+        isLoaded = true
         delegate?.bannerViewDidReceiveAd(self)
         
         print("UAdBannerView bannerViewDidReceiveAd")

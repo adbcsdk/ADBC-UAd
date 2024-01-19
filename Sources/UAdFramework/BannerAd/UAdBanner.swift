@@ -12,7 +12,7 @@ public class UAdBanner {
     
     private var bannerView: UAdBannerView?
     
-    public init(adUnitID: String, rootViewController: UIViewController, delegate: UAdBannerViewDelegate) {
+    public init(adUnitID: String, rootViewController: UIViewController, delegate: UAdBannerViewDelegate?) {
         bannerView = UAdBannerView(adUnitID: adUnitID, rootViewController: rootViewController, delegate: delegate)
     }
     

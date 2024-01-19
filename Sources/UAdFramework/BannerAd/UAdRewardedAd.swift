@@ -14,13 +14,14 @@ public class UAdRewardedAd: NSObject {
     private let adsType = "reward"
     private let status = StatusSendHelper()
     
+    private var isLoaded = false
     private var adUnitID: String = "ca-app-pub-3940256099942544/1712485313"
     private var rootViewController: UIViewController
-    private var delegate: UAdFullScreenContentDelegate
+    private var delegate: UAdFullScreenContentDelegate?
     
     private var rewardedAd: GADRewardedAd?
     
-    public init(adUnitID: String, rootViewController: UIViewController, delegate: UAdFullScreenContentDelegate) {
+    public init(adUnitID: String, rootViewController: UIViewController, delegate: UAdFullScreenContentDelegate?) {
         
         self.adUnitID = adUnitID
         self.rootViewController = rootViewController
@@ -28,6 +29,9 @@ public class UAdRewardedAd: NSObject {
     }
     
     public func load() {
+        
+        if isLoaded { return }
+        
         let request = GADRequest()
         GADRewardedAd.load(withAdUnitID: adUnitID, request: request, completionHandler: { [self] ad, error in
             
@@ -37,6 +41,7 @@ public class UAdRewardedAd: NSObject {
             }
             rewardedAd = ad
             rewardedAd?.fullScreenContentDelegate = self
+            isLoaded = true
         })
     }
     
@@ -55,16 +60,16 @@ public class UAdRewardedAd: NSObject {
 
 extension UAdRewardedAd: GADFullScreenContentDelegate {
     public func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        delegate.ad(didFailToPresentFullScreenContentWithError: error)
+        delegate?.ad(didFailToPresentFullScreenContentWithError: error)
     }
 
     /// Tells the delegate that the ad will present full screen content.
     public func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        delegate.adWillPresentFullScreenContent()
+        delegate?.adWillPresentFullScreenContent()
     }
 
     /// Tells the delegate that the ad dismissed full screen content.
     public func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        delegate.adWillPresentFullScreenContent()
+        delegate?.adWillPresentFullScreenContent()
     }
 }
