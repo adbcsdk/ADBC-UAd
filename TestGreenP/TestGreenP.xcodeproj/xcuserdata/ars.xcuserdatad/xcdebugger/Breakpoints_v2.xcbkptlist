@@ -14,8 +14,8 @@
             filePath = "TestGreenP/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "showBanner(_:)"
             landmarkType = "7">
             <Locations>
@@ -77,8 +77,8 @@
             filePath = "TestGreenP/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "248"
-            endingLineNumber = "248"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
             landmarkName = "adLoaderDidFinishLoading(_:)"
             landmarkType = "7">
             <Locations>
@@ -125,8 +125,8 @@
             filePath = "TestGreenP/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
             landmarkName = "adLoader(_:didFailToReceiveAdWithError:)"
             landmarkType = "7">
             <Locations>
@@ -173,8 +173,8 @@
             filePath = "TestGreenP/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "adLoader(_:didReceive:)"
             landmarkType = "7">
             <Locations>
@@ -236,8 +236,8 @@
             filePath = "TestGreenP/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "setAdView(_:)"
             landmarkType = "7">
             <Locations>
@@ -271,7 +271,54 @@
                   endingLineNumber = "67"
                   offsetFromSymbolStart = "83">
                </Location>
+               <Location
+                  uuid = "775097E0-BD60-4138-BCD1-343D6132EA4A - 25349452c3a19e9f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TestGreenP.ViewController.setAdView(UAdFramework.UAdNativeAdView) -&gt; ()"
+                  moduleName = "TestGreenP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/TestGreenP/TestGreenP/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "83">
+               </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "99890769-128B-45E8-9889-95BBD0ACDC9B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/UAdFramework/NativeAd/UAdNativeAdView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "init(frame:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3522F902-F77E-45EF-8F3A-95B241EFA048"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/UAdFramework/NativeAd/UAdNativeAdView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "commonInit()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

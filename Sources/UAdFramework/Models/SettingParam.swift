@@ -52,7 +52,7 @@ struct Setting : Decodable {
         }
     }
     
-    struct Ad : Decodable {
+    struct Ad : Encodable, Decodable {
         var zone: String
         var network: String
         var type: String

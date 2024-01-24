@@ -29,11 +29,18 @@ public class UAdInterstitial: NSObject {
     
     private var interstitial: GADInterstitialAd?
     
-    public init(adUnitID: String, rootViewController: UIViewController, delegate: UAdFullScreenContentDelegate?) {
+    public init(zoneId: String, rootViewController: UIViewController, delegate: UAdFullScreenContentDelegate?) {
         
-        self.adUnitID = adUnitID
         self.rootViewController = rootViewController
         self.delegate = delegate
+        
+        if let ad = UserInfo.shared.adCodes.first(where: { $0.zone == zoneId }) {
+            self.adUnitID = ad.code
+        } else {
+            self.adUnitID = ""
+//            let error = NSError(domain: "UAdFramework", code: 999, userInfo: [NSLocalizedDescriptionKey: "Zone Id not found"])
+//            delegate?.bannerViewDidFailToReceiveAdWithError(error: error)
+        }
     }
     
     public func load() {

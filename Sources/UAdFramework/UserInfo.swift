@@ -54,13 +54,24 @@ class UserInfo {
         }
     }
     
-    var isTest: Bool? {
+    var isDebug: Bool? {
         get {
-            return UserDefaults.standard[.isTest]
+            return UserDefaults.standard[.isDebug]
         }
-        set(newIsTest) {
-            if let isTest = newIsTest {
-                UserDefaults.standard[.isTest] = isTest
+        set(newIsDebug) {
+            if let isDebug = newIsDebug {
+                UserDefaults.standard[.isDebug] = isDebug
+            }
+        }
+    }
+    
+    var ump: Bool? {
+        get {
+            return UserDefaults.standard[.ump]
+        }
+        set(newUmp) {
+            if let ump = newUmp {
+                UserDefaults.standard[.ump] = ump
             }
         }
     }
@@ -81,5 +92,38 @@ class UserInfo {
         set(flag) {
             UserDefaults.standard[.privacyUsagePermission] = flag
         }
+    }
+    
+    var adCodes: [Setting.Ad] {
+        get {
+            if let data = UserDefaults.standard[.adCodes] {
+                do {
+                    let decoder = JSONDecoder()
+                    let storedAds = try decoder.decode([Setting.Ad].self, from: data)
+                    print(storedAds)
+                    return storedAds
+                } catch {
+                    print("Error decoding ads: \(error.localizedDescription)")
+                    return []
+                }
+            } else {
+                return []
+            }
+        }
+        set(newCodes) {
+            if(newCodes.count > 0) {
+                do {
+                    let encoder = JSONEncoder()
+                    let data = try encoder.encode(newCodes)
+                    UserDefaults.standard[.adCodes] = data
+                } catch {
+                    print("Error encoding ads: \(error.localizedDescription)")
+                }
+            }
+        }
+    }
+    
+    public func getAdUnitId(zoneId: String) -> Setting.Ad? {
+        return UserInfo.shared.adCodes.first(where: { $0.zone == zoneId })
     }
 }

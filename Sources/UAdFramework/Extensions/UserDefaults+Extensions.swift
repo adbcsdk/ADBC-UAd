@@ -68,11 +68,11 @@ extension UserDefaults {
     
     /// UserDefault 전체를 프린트하는 함수
     func printAllUserDefaults() {
-        print("--------- USER DEFAULT LIST BEGIN ----------")
+        print("--------- UAD_SDK LIST BEGIN ----------")
         for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
             print("\(key) : \(value)")
         }
-        print("---------- USER DEFAULT List END -----------")
+        print("---------- UAD_SDK List END -----------")
     }
 }
 
@@ -81,30 +81,32 @@ extension UserDefaults.Key {
     typealias Key = UserDefaults.Key
     
     static var appCode: Key<String> {
-        return Key<String>("USERDEFAULT_KEY_APPCODE")
+        return Key<String>("UAD_SDK_KEY_APPCODE")
     }
     static var userID: Key<String> {
-        return Key<String>("USERDEFAULT_KEY_USERID")
+        return Key<String>("UAD_SDK_KEY_USERID")
     }
     static var idfa: Key<String> {
-        return Key<String>("USERDEFAULT_KEY_IDFA")
+        return Key<String>("UAD_SDK_KEY_IDFA")
     }
-    static var isTest: Key<Bool> {
-        return Key<Bool>("USERDEFAULT_KEY_IS_TEST")
+    static var isDebug: Key<Bool> {
+        return Key<Bool>("UAD_SDK_KEY_IS_DEBUG")
+    }
+    static var ump: Key<Bool> {
+        return Key<Bool>("UAD_SDK_KEY_UMP")
     }
     static var privacyUsagePermission: Key<Bool> {
-        return Key<Bool>("USERDEFAULT_KEY_PERMISSION_FOR_PRIVACY_USAGE")
+        return Key<Bool>("UAD_SDK_KEY_PERMISSION_FOR_PRIVACY_USAGE")
+    }
+    static var adCodes: Key<Data> {
+        return Key<Data>("UAD_SDK_KEY_AD_CODES")
     }
     
     static var closePopupDate: Key<Date> {
-        return Key<Date>("closePopupDate")
+        return Key<Date>("UAD_SDK_KEY_CLOSE_POPUP_DATE")
     }
     
     static var idfaPopupShowDate: Key<Date> {
-        return Key<Date>("idfaPopupShowDate")
-    }
-    
-    static var newLocationMission: Key<Int> {
-        return Key<Int>("newLocationMission")
+        return Key<Date>("UAD_SDK_POPUP_SHOW_DATE")
     }
 }

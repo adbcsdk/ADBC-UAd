@@ -16,9 +16,7 @@
 		50EA23382B0DB61700182F4D /* TestGreenPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA23372B0DB61700182F4D /* TestGreenPUITestsLaunchTests.swift */; };
 		50EA23462B0DB62400182F4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA23442B0DB62400182F4D /* ViewController.swift */; };
 		50EA23472B0DB62400182F4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50EA23452B0DB62400182F4D /* Main.storyboard */; };
-		6A908EBD2B5A13110059F797 /* GADTTemplateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A908EB92B5A13110059F797 /* GADTTemplateView.m */; };
-		6A908EBE2B5A13110059F797 /* GADTSmallTemplateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A908EBA2B5A13110059F797 /* GADTSmallTemplateView.m */; };
-		6A908EBF2B5A13110059F797 /* GADTSmallTemplateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A908EBB2B5A13110059F797 /* GADTSmallTemplateView.xib */; };
+		6A908EBF2B5A13110059F797 /* UAdNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A908EBB2B5A13110059F797 /* UAdNativeAdView.xib */; };
 		6AAE2E312B50D15400B5592E /* UAdFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 6AAE2E302B50D15400B5592E /* UAdFramework */; };
 /* End PBXBuildFile section */
 
@@ -53,12 +51,7 @@
 		50EA23372B0DB61700182F4D /* TestGreenPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGreenPUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		50EA23442B0DB62400182F4D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		50EA23452B0DB62400182F4D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		6A908EAF2B5910580059F797 /* TestGreenP-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestGreenP-Bridging-Header.h"; sourceTree = "<group>"; };
-		6A908EB82B5A13100059F797 /* GADTTemplateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADTTemplateView.h; sourceTree = "<group>"; };
-		6A908EB92B5A13110059F797 /* GADTTemplateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADTTemplateView.m; sourceTree = "<group>"; };
-		6A908EBA2B5A13110059F797 /* GADTSmallTemplateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADTSmallTemplateView.m; sourceTree = "<group>"; };
-		6A908EBB2B5A13110059F797 /* GADTSmallTemplateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GADTSmallTemplateView.xib; path = "../../../../../Downloads/googleads-mobile-ios-native-templates-main/nativetemplates/GADTSmallTemplateView.xib"; sourceTree = "<group>"; };
-		6A908EBC2B5A13110059F797 /* GADTSmallTemplateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADTSmallTemplateView.h; path = "../../../../../Downloads/googleads-mobile-ios-native-templates-main/nativetemplates/GADTSmallTemplateView.h"; sourceTree = "<group>"; };
+		6A908EBB2B5A13110059F797 /* UAdNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UAdNativeAdView.xib; path = "../../../../../Downloads/googleads-mobile-ios-native-templates-main/nativetemplates/UAdNativeAdView.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,11 +104,7 @@
 		50EA23132B0DB61500182F4D /* TestGreenP */ = {
 			isa = PBXGroup;
 			children = (
-				6A908EBC2B5A13110059F797 /* GADTSmallTemplateView.h */,
-				6A908EBA2B5A13110059F797 /* GADTSmallTemplateView.m */,
-				6A908EBB2B5A13110059F797 /* GADTSmallTemplateView.xib */,
-				6A908EB82B5A13100059F797 /* GADTTemplateView.h */,
-				6A908EB92B5A13110059F797 /* GADTTemplateView.m */,
+				6A908EBB2B5A13110059F797 /* UAdNativeAdView.xib */,
 				50EA23142B0DB61500182F4D /* AppDelegate.swift */,
 				50EA23162B0DB61500182F4D /* SceneDelegate.swift */,
 				50EA23452B0DB62400182F4D /* Main.storyboard */,
@@ -123,7 +112,6 @@
 				50EA231D2B0DB61700182F4D /* Assets.xcassets */,
 				50EA231F2B0DB61700182F4D /* LaunchScreen.storyboard */,
 				50EA23222B0DB61700182F4D /* Info.plist */,
-				6A908EAF2B5910580059F797 /* TestGreenP-Bridging-Header.h */,
 			);
 			path = TestGreenP;
 			sourceTree = "<group>";
@@ -265,7 +253,7 @@
 			files = (
 				50EA23472B0DB62400182F4D /* Main.storyboard in Resources */,
 				50EA23212B0DB61700182F4D /* LaunchScreen.storyboard in Resources */,
-				6A908EBF2B5A13110059F797 /* GADTSmallTemplateView.xib in Resources */,
+				6A908EBF2B5A13110059F797 /* UAdNativeAdView.xib in Resources */,
 				50EA231E2B0DB61700182F4D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,9 +281,7 @@
 			files = (
 				50EA23462B0DB62400182F4D /* ViewController.swift in Sources */,
 				50EA23152B0DB61500182F4D /* AppDelegate.swift in Sources */,
-				6A908EBD2B5A13110059F797 /* GADTTemplateView.m in Sources */,
 				50EA23172B0DB61500182F4D /* SceneDelegate.swift in Sources */,
-				6A908EBE2B5A13110059F797 /* GADTSmallTemplateView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

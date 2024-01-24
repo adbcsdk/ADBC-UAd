@@ -1,49 +1,38 @@
 //
-//  File.swift
-//  
+//  AS.swift
+//  TestGreenP
 //
-//  Created by 신아람 on 1/12/24.
+//  Created by 신아람 on 1/22/24.
 //
 
 import UIKit
 import SnapKit
 import GoogleMobileAds
 
-public enum UAdBannerSize {
-    case BANNER320X50
-    case BANNER320X100
-    case BANNER300X250
-    case BANNER468X60
-    case BANNER728X90
+public protocol ASDelegate : AnyObject {
+    func bannerViewDidReceiveAd(_ bannerView: AS)
+
+    func bannerView(_ bannerView: AS, didFailToReceiveAdWithError error: Error)
+
+    func bannerViewDidRecordImpression(_ bannerView: AS)
+
+    func bannerViewWillPresentScreen(_ bannerView: AS)
+
+    func bannerViewWillDismissScreen(_ bannerView: AS)
+
+    func bannerViewDidDismissScreen(_ bannerView: AS)
 }
 
-public protocol UAdBannerViewDelegate : AnyObject {
-    func bannerViewDidReceiveAd(_ bannerView: UAdBannerView)
-    
-    func bannerViewDidRecordImpression(_ bannerView: UAdBannerView)
-
-    func bannerViewWillPresentScreen(_ bannerView: UAdBannerView)
-
-    func bannerViewWillDismissScreen(_ bannerView: UAdBannerView)
-
-    func bannerViewDidDismissScreen(_ bannerView: UAdBannerView)
-    
-    func bannerViewDidFailToReceiveAdWithError(error: Error)
-}
-
-public class UAdBannerView: UIView {
-    
-    private let adsType = "banner"
-    private let status = StatusSendHelper()
+public class AS: UIView {
     
     private var isLoaded = false
     private var adUnitID: String = "ca-app-pub-3940256099942544/2934735716"
     private var rootViewController: UIViewController?
-    private var delegate: UAdBannerViewDelegate?
+    private var delegate: ASDelegate?
     
     private var bannerView: GADBannerView?
     
-    init(adUnitID: String, rootViewController: UIViewController, delegate: UAdBannerViewDelegate?) {
+    init(adUnitID: String, rootViewController: UIViewController, delegate: ASDelegate?) {
         
         self.adUnitID = adUnitID
         self.rootViewController = rootViewController
@@ -51,6 +40,7 @@ public class UAdBannerView: UIView {
         
         super.init(frame: .zero)
         
+        backgroundColor = .yellow
         initBannerView()
     }
     
@@ -64,13 +54,19 @@ public class UAdBannerView: UIView {
     }
     
     public func load() {
+        
         if isLoaded { return }
+        
         bannerView?.load(GADRequest())
     }
     
     public func setSize(size: GADAdSize) {
         frame = CGRect(x: 0, y: 0, width: size.size.width, height: size.size.height)
         bannerView?.adSize = size
+    }
+    
+    public func getView() -> GADBannerView? {
+        return bannerView
     }
     
     private func initBannerView() {
@@ -82,42 +78,53 @@ public class UAdBannerView: UIView {
         addSubview(bannerView!)
         
         bannerView?.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+            
             make.left.equalTo(self.snp.left)
             make.right.equalTo(self.snp.right)
             make.top.equalTo(self.snp.top)
             make.bottom.equalTo(self.snp.bottom)
+            
         }
     }
 }
 
-extension UAdBannerView: GADBannerViewDelegate {
+extension AS: GADBannerViewDelegate {
     public func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
         isLoaded = true
         delegate?.bannerViewDidReceiveAd(self)
+        
         print("UAdBannerView bannerViewDidReceiveAd")
     }
 
     public func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+        delegate?.bannerView(self, didFailToReceiveAdWithError: error)
+        
         print("UAdBannerView bannerView")
     }
 
     public func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
         delegate?.bannerViewDidRecordImpression(self)
+        
         print("UAdBannerView bannerViewDidRecordImpression")
     }
 
     public func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
         delegate?.bannerViewWillPresentScreen(self)
+        
         print("UAdBannerView bannerViewWillPresentScreen")
     }
 
     public func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
         delegate?.bannerViewWillDismissScreen(self)
+        
         print("UAdBannerView bannerViewWillDismissScreen")
     }
 
     public func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
         delegate?.bannerViewDidDismissScreen(self)
+        
         print("UAdBannerView bannerViewDidDismissScreen")
     }
 }

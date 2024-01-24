@@ -1,0 +1,8 @@
+// module.modulemap
+
+module GADNativeAdTemplate [system] {
+    header "GADTTemplateView.h"
+    header "GADTMediumTemplateView.h"
+    header "GADTSmallTemplateView.h"
+    export *
+}

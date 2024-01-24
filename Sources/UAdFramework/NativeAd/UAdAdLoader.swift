@@ -25,11 +25,19 @@ public class UAdAdLoader: NSObject {
     private var adLoader: GADAdLoader!
     private var nativeAd: UAdNativeAd!
     
-    public init(adUnitID: String, rootViewController: UIViewController, delegate: UAdNativeAdLoaderDelegate) {
-        self.adUnitID = adUnitID
+    public init(zoneId: String, rootViewController: UIViewController, delegate: UAdNativeAdLoaderDelegate) {
+        
         self.rootViewController = rootViewController
         self.delegate = delegate
         super.init()
+        
+        if let ad = UserInfo.shared.adCodes.first(where: { $0.zone == zoneId }) {
+            self.adUnitID = ad.code
+        } else {
+            self.adUnitID = ""
+//            let error = NSError(domain: "UAdFramework", code: 999, userInfo: [NSLocalizedDescriptionKey: "Zone Id not found"])
+//            delegate?.bannerViewDidFailToReceiveAdWithError(error: error)
+        }
     }
     
     public func load() {

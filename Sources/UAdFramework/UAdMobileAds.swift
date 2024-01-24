@@ -9,10 +9,6 @@ import Foundation
 import AdSupport
 import GoogleMobileAds
 import AppTrackingTransparency
-import UnityAds
-import FBAudienceNetwork
-import AppLovinSDK
-import AdsGlobalPackage
 
 public typealias UAdInitHandler = (UAdInitStatusCode) -> Void
 public enum UAdInitStatusCode {
@@ -29,6 +25,7 @@ open class UAdMobileAds {
         return instance
     }
     
+    private var isDebug = false
     private var isTracking = false
     private var isLoading = false
     private var hand: UAdInitHandler?
@@ -40,10 +37,10 @@ open class UAdMobileAds {
     private init() {
     }
     
-    public func initialize(appID: String, userID: String, isTest: Bool) {
+    public func initialize(appID: String, userID: String, isDebug: Bool) {
         UserInfo.shared.appCode = appID
         UserInfo.shared.userID = userID
-        UserInfo.shared.isTest = isTest
+        self.isDebug = isDebug
         
         GADMobileAds.sharedInstance().start { status in
             
@@ -72,32 +69,43 @@ open class UAdMobileAds {
                 
                 setIDFAAndRegistDevice()
                 
-                print("GADMobileAds.version = \(GADMobileAds.sharedInstance().versionNumber)")
-                print("UnityAds.version = \(UnityAds.getVersion())")
-                print("FBAudienceNetworkAds.version = \(FBAdSettings.version())")
-                print("ALSdk.version = \(ALSdk.version())")
-                
-                let frameworkBundle = Bundle(for: FBAdView.self)
-                if let version = frameworkBundle.infoDictionary?["CFBundleShortVersionString"] as? String {
-                    print("FBAudienceNetworkAds 버전: \(version)")
-                } else {
-                    print("FBAudienceNetworkAds 버전을 가져올 수 없습니다.")
-                }
-                
-                if let path = Bundle.main.path(forResource: "Package", ofType: "swift"),
-                    let content = try? String(contentsOfFile: path),
-                    let versionRange = content.range(of: #"\.package\(.*"AdsGlobalPackage", from: "(.*?)".*\)"#, options: .regularExpression),
-                    let version = String(content[versionRange]).components(separatedBy: "\"").dropFirst().first {
-                    print("AdsGlobalPackage 버전: \(version)")
-                } else {
-                    print("AdsGlobalPackage fail")
-                }
+//                print("GADMobileAds.version = \(GADMobileAds.sharedInstance().versionNumber)")
+//                print("UnityAds.version = \(UnityAds.getVersion())")
+//                print("FBAudienceNetworkAds.version = \(FBAdSettings.version())")
+//                print("ALSdk.version = \(ALSdk.version())")
+//                
+//                let frameworkBundle = Bundle(for: FBAdView.self)
+//                if let version = frameworkBundle.infoDictionary?["CFBundleShortVersionString"] as? String {
+//                    print("FBAudienceNetworkAds 버전: \(version)")
+//                } else {
+//                    print("FBAudienceNetworkAds 버전을 가져올 수 없습니다.")
+//                }
+//                
+//                if let path = Bundle.main.path(forResource: "Package", ofType: "swift"),
+//                    let content = try? String(contentsOfFile: path),
+//                    let versionRange = content.range(of: #"\.package\(.*"AdsGlobalPackage", from: "(.*?)".*\)"#, options: .regularExpression),
+//                    let version = String(content[versionRange]).components(separatedBy: "\"").dropFirst().first {
+//                    print("AdsGlobalPackage 버전: \(version)")
+//                } else {
+//                    print("AdsGlobalPackage fail")
+//                }
                 
                 
                 let param = SettingParam(adtracking: isTracking, version: getVersion())
                 print("data = \(param.dictionary)")
 
                 let result: Setting = try await NetworkManager.shared.request(subURL: "setting.html", params: param.dictionary, method: .get)
+                
+                if let debug = Bool(result.data.debug) {
+                    UserInfo.shared.isDebug = (debug || isDebug)
+                } else {
+                    UserInfo.shared.isDebug = isDebug
+                }
+                
+                if let ump = Bool(result.data.ump) {
+                    UserInfo.shared.ump = ump
+                }
+                UserInfo.shared.adCodes = result.data.ads
                 
                 isLoading = false
             } catch let error {
@@ -112,7 +120,9 @@ open class UAdMobileAds {
         let versionNumber = GADMobileAds.sharedInstance().versionNumber
         let gAdVer = "\(versionNumber.majorVersion).\(versionNumber.minorVersion).\(versionNumber.patchVersion)"
         
-        let versionInfo = VersionInfo(sdkVer: "1.0.0", originVer: gAdVer, mediations: VersionInfo.Mediations(applovin: ALSdk.version(), pangle: "5.5.0.7", unityads: UnityAds.getVersion(), meta: "6.14.0"))
+//        let versionInfo = VersionInfo(sdkVer: "1.0.0", originVer: gAdVer, mediations: VersionInfo.Mediations(applovin: ALSdk.version(), pangle: "5.5.0.7", unityads: UnityAds.getVersion(), meta: "6.14.0"))
+        
+        let versionInfo = VersionInfo(sdkVer: "1.0.0", originVer: gAdVer, mediations: VersionInfo.Mediations(applovin: "", pangle: "", unityads: "", meta: ""))
 
         do {
             let jsonData = try JSONEncoder().encode(versionInfo)

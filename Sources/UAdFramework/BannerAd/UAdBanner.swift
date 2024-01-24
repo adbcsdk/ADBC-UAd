@@ -12,8 +12,13 @@ public class UAdBanner {
     
     private var bannerView: UAdBannerView?
     
-    public init(adUnitID: String, rootViewController: UIViewController, delegate: UAdBannerViewDelegate?) {
-        bannerView = UAdBannerView(adUnitID: adUnitID, rootViewController: rootViewController, delegate: delegate)
+    public init(zoneId: String, rootViewController: UIViewController, delegate: UAdBannerViewDelegate?) {
+        if let ad = UserInfo.shared.adCodes.first(where: { $0.zone == zoneId }) {
+            bannerView = UAdBannerView(adUnitID: ad.code, rootViewController: rootViewController, delegate: delegate)
+        } else {
+            let error = NSError(domain: "UAdFramework", code: 999, userInfo: [NSLocalizedDescriptionKey: "Zone Id not found"])
+            delegate?.bannerViewDidFailToReceiveAdWithError(error: error)
+        }
     }
     
     public func load() {
