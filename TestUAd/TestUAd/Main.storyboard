@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b5d-cZ-XHa">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="VgU-sW-3lE">
+            <objects>
+                <viewController id="b5d-cZ-XHa" customClass="ViewController" customModule="TestGreenP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O9U-kF-zDP">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offerwall Sample" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wsi-QQ-fNL">
+                                <rect key="frame" x="20" y="79" width="353" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="myelinsoft" borderStyle="roundedRect" placeholder="User ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tDf-y0-EoU">
+                                <rect key="frame" x="20" y="120" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="fcY-lc-4y9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Is3-Fc-lpf">
+                                <rect key="frame" x="240" y="120" width="100" height="30"/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.4039215686" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="iD5-Uh-Vvz"/>
+                                </constraints>
+                                <state key="normal" title="초기화">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapRegistBtn:" destination="b5d-cZ-XHa" eventType="touchUpInside" id="szn-P3-LKZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offerwall message" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDG-Aj-Uqr">
+                                <rect key="frame" x="20" y="154" width="353" height="20.333333333333343"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ayj-qT-TZA">
+                                <rect key="frame" x="96.666666666666686" y="194.33333333333334" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.4039215686" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="JsR-oJ-OdH"/>
+                                </constraints>
+                                <state key="normal" title="Show Banner">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="showBanner:" destination="b5d-cZ-XHa" eventType="touchUpInside" id="hcd-gm-NXq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbw-4b-f1H">
+                                <rect key="frame" x="97" y="244" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.4039215686" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="crS-Dk-eOg"/>
+                                </constraints>
+                                <state key="normal" title="Load Interstitial Ad">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadInterstitial:" destination="b5d-cZ-XHa" eventType="touchUpInside" id="w1j-5S-RYR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nye-OD-ktu">
+                                <rect key="frame" x="97" y="284" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.4039215686" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="fqP-18-cnm"/>
+                                </constraints>
+                                <state key="normal" title="Show Interstitial">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="showInterstitial:" destination="b5d-cZ-XHa" eventType="touchUpInside" id="RGs-i7-LHF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFt-v3-zex">
+                                <rect key="frame" x="96.666666666666686" y="334.33333333333331" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.4039215686" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="9jf-Ib-9Q7"/>
+                                </constraints>
+                                <state key="normal" title="Load Native Ad">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadNative:" destination="b5d-cZ-XHa" eventType="touchUpInside" id="Zof-1p-Jg0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEu-xu-XA9">
+                                <rect key="frame" x="96.666666666666686" y="374.33333333333331" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.4039215686" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="8z6-Gh-gny"/>
+                                </constraints>
+                                <state key="normal" title="Show Native Banner">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="showNative:" destination="b5d-cZ-XHa" eventType="touchUpInside" id="zT1-sm-cgY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Csl-so-1HV">
+                                <rect key="frame" x="97" y="424" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.4039215686" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="kII-sA-L15"/>
+                                </constraints>
+                                <state key="normal" title="Load Reward Ad">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadReward:" destination="b5d-cZ-XHa" eventType="touchUpInside" id="fyn-cu-QDe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AO4-5P-E5F">
+                                <rect key="frame" x="97" y="464" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.4039215686" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="3Sg-h0-LMX"/>
+                                </constraints>
+                                <state key="normal" title="Show Reward">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="showReward:" destination="b5d-cZ-XHa" eventType="touchUpInside" id="s2a-5M-pvA"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7lB-rT-00X">
+                                <rect key="frame" x="20" y="514.33333333333337" width="353" height="250"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="tox-qa-RN1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fPD-MR-Ahj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ayj-qT-TZA" firstAttribute="centerX" secondItem="O9U-kF-zDP" secondAttribute="centerX" id="3JR-em-lfQ"/>
+                            <constraint firstItem="7lB-rT-00X" firstAttribute="leading" secondItem="fPD-MR-Ahj" secondAttribute="leading" constant="20" id="46f-ay-tCX"/>
+                            <constraint firstItem="tDf-y0-EoU" firstAttribute="top" secondItem="Wsi-QQ-fNL" secondAttribute="bottom" constant="20" id="4Ef-ec-OOn"/>
+                            <constraint firstItem="Is3-Fc-lpf" firstAttribute="top" secondItem="Wsi-QQ-fNL" secondAttribute="bottom" constant="20" id="4Qp-KO-DXt"/>
+                            <constraint firstItem="Wsi-QQ-fNL" firstAttribute="centerX" secondItem="O9U-kF-zDP" secondAttribute="centerX" id="5Tp-nc-OWY"/>
+                            <constraint firstItem="XDG-Aj-Uqr" firstAttribute="leading" secondItem="fPD-MR-Ahj" secondAttribute="leading" constant="20" id="65S-uA-cC1"/>
+                            <constraint firstItem="xFt-v3-zex" firstAttribute="centerX" secondItem="O9U-kF-zDP" secondAttribute="centerX" id="6EU-PW-feE"/>
+                            <constraint firstItem="aEu-xu-XA9" firstAttribute="centerX" secondItem="O9U-kF-zDP" secondAttribute="centerX" id="C2H-3K-u2p"/>
+                            <constraint firstItem="fPD-MR-Ahj" firstAttribute="trailing" secondItem="Wsi-QQ-fNL" secondAttribute="trailing" constant="20" id="Eb5-qt-gPI"/>
+                            <constraint firstItem="AO4-5P-E5F" firstAttribute="top" secondItem="Csl-so-1HV" secondAttribute="bottom" constant="10" id="Ef3-x9-vQG"/>
+                            <constraint firstItem="fPD-MR-Ahj" firstAttribute="trailing" secondItem="XDG-Aj-Uqr" secondAttribute="trailing" constant="20" id="F2a-l8-ip8"/>
+                            <constraint firstItem="Csl-so-1HV" firstAttribute="centerX" secondItem="O9U-kF-zDP" secondAttribute="centerX" id="GlJ-15-PSK"/>
+                            <constraint firstItem="XDG-Aj-Uqr" firstAttribute="top" secondItem="tDf-y0-EoU" secondAttribute="bottom" id="L8d-95-F4I"/>
+                            <constraint firstItem="AO4-5P-E5F" firstAttribute="centerX" secondItem="O9U-kF-zDP" secondAttribute="centerX" id="N4L-yG-z4p"/>
+                            <constraint firstItem="aEu-xu-XA9" firstAttribute="top" secondItem="xFt-v3-zex" secondAttribute="bottom" constant="10" id="Ngb-e3-wfp"/>
+                            <constraint firstItem="pbw-4b-f1H" firstAttribute="centerX" secondItem="O9U-kF-zDP" secondAttribute="centerX" id="Ob2-0l-Bqh"/>
+                            <constraint firstItem="Nye-OD-ktu" firstAttribute="top" secondItem="pbw-4b-f1H" secondAttribute="bottom" constant="10" id="Pfk-6Z-PYh"/>
+                            <constraint firstItem="Wsi-QQ-fNL" firstAttribute="top" secondItem="fPD-MR-Ahj" secondAttribute="top" constant="20" id="QLu-xk-fkB"/>
+                            <constraint firstItem="Is3-Fc-lpf" firstAttribute="leading" secondItem="tDf-y0-EoU" secondAttribute="trailing" constant="20" id="RLZ-z2-QRL"/>
+                            <constraint firstItem="7lB-rT-00X" firstAttribute="top" secondItem="AO4-5P-E5F" secondAttribute="bottom" constant="20" id="Rzw-tx-ieH"/>
+                            <constraint firstItem="tDf-y0-EoU" firstAttribute="leading" secondItem="fPD-MR-Ahj" secondAttribute="leading" constant="20" id="UIA-bu-lSW"/>
+                            <constraint firstItem="Nye-OD-ktu" firstAttribute="centerX" secondItem="O9U-kF-zDP" secondAttribute="centerX" id="ZSE-D0-si4"/>
+                            <constraint firstItem="pbw-4b-f1H" firstAttribute="top" secondItem="Ayj-qT-TZA" secondAttribute="bottom" constant="20" id="b44-AJ-wuJ"/>
+                            <constraint firstItem="fPD-MR-Ahj" firstAttribute="trailing" secondItem="7lB-rT-00X" secondAttribute="trailing" constant="20" id="eQb-bm-oGA"/>
+                            <constraint firstItem="Csl-so-1HV" firstAttribute="top" secondItem="aEu-xu-XA9" secondAttribute="bottom" constant="20" id="ejx-YQ-oqL"/>
+                            <constraint firstItem="7lB-rT-00X" firstAttribute="centerX" secondItem="O9U-kF-zDP" secondAttribute="centerX" id="gIc-s6-mrz"/>
+                            <constraint firstItem="Wsi-QQ-fNL" firstAttribute="leading" secondItem="fPD-MR-Ahj" secondAttribute="leading" constant="20" id="sc0-Yu-8yO"/>
+                            <constraint firstItem="Ayj-qT-TZA" firstAttribute="top" secondItem="XDG-Aj-Uqr" secondAttribute="bottom" constant="20" id="u0J-Pm-EHT"/>
+                            <constraint firstItem="xFt-v3-zex" firstAttribute="top" secondItem="Nye-OD-ktu" secondAttribute="bottom" constant="20" id="xJD-Ca-IfO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bannerWrapperView" destination="7lB-rT-00X" id="TRr-7F-F2D"/>
+                        <outlet property="idTextField" destination="tDf-y0-EoU" id="zAb-IC-3zB"/>
+                        <outlet property="resultLabel" destination="XDG-Aj-Uqr" id="qLu-fk-SPV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ehr-v6-JRp" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="307.63358778625951" y="60.563380281690144"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

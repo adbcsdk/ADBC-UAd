@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "43923240-7446-48F6-A498-D60DC258B463"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "99890769-128B-45E8-9889-95BBD0ACDC9B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/UAdFramework/NativeAd/UAdNativeAdView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "init(frame:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3522F902-F77E-45EF-8F3A-95B241EFA048"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/UAdFramework/NativeAd/UAdNativeAdView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "commonInit()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "795D00BF-B298-4090-AE36-2A108ED268C8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestGreenP/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "showBanner(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A7CAD2DD-F2C2-482B-A0F2-02C78A75B4C6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/UAdFramework/UAdMobileAds.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "initialize(appID:userID:isDebug:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A7CAD2DD-F2C2-482B-A0F2-02C78A75B4C6 - c0037de49814b96f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UAdFramework.UAdMobileAds.initialize(appID: Swift.String, userID: Swift.String, isDebug: Swift.Bool, completion: Swift.Optional&lt;(Swift.Bool, Swift.String) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "396">
+               </Location>
+               <Location
+                  uuid = "A7CAD2DD-F2C2-482B-A0F2-02C78A75B4C6 - c0037de49814be25"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UAdFramework.UAdMobileAds.initialize(appID: Swift.String, userID: Swift.String, isDebug: Swift.Bool, completion: Swift.Optional&lt;(Swift.Bool, Swift.String) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "396">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4108E53F-A047-47C8-AE83-C92EED87B933"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/UAdFramework/UAdMobileAds.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "getSetting(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4108E53F-A047-47C8-AE83-C92EED87B933 - 120e80ba438540e0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in UAdFramework.UAdMobileAds.getSetting(completion: Swift.Optional&lt;(Swift.Bool, Swift.String) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "1049">
+               </Location>
+               <Location
+                  uuid = "4108E53F-A047-47C8-AE83-C92EED87B933 - d407733de4a38d43"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in UAdFramework.UAdMobileAds.getSetting(completion: Swift.Optional&lt;(Swift.Bool, Swift.String) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "1081">
+               </Location>
+               <Location
+                  uuid = "4108E53F-A047-47C8-AE83-C92EED87B933 - d407733de4a38d43"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in UAdFramework.UAdMobileAds.getSetting(completion: Swift.Optional&lt;(Swift.Bool, Swift.String) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "1306">
+               </Location>
+               <Location
+                  uuid = "4108E53F-A047-47C8-AE83-C92EED87B933 - d407733de4a38c24"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in UAdFramework.UAdMobileAds.getSetting(completion: Swift.Optional&lt;(Swift.Bool, Swift.String) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "1081">
+               </Location>
+               <Location
+                  uuid = "4108E53F-A047-47C8-AE83-C92EED87B933 - d407733de4a38c24"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in UAdFramework.UAdMobileAds.getSetting(completion: Swift.Optional&lt;(Swift.Bool, Swift.String) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "1306">
+               </Location>
+               <Location
+                  uuid = "4108E53F-A047-47C8-AE83-C92EED87B933 - d407733de4a38fcf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in UAdFramework.UAdMobileAds.getSetting(completion: Swift.Optional&lt;(Swift.Bool, Swift.String) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "1081">
+               </Location>
+               <Location
+                  uuid = "4108E53F-A047-47C8-AE83-C92EED87B933 - d407733de4a38fcf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in UAdFramework.UAdMobileAds.getSetting(completion: Swift.Optional&lt;(Swift.Bool, Swift.String) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "1306">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8A8788FE-A28C-4C3B-A370-44703701478B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/UAdFramework/UAdMobileAds.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "updateUIViewController()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8A8788FE-A28C-4C3B-A370-44703701478B - 73a9837d79253e38"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UAdFramework.UAdMobileAds.setIDFAAndRegistDevice() -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "8A8788FE-A28C-4C3B-A370-44703701478B - 2c768755ed089793"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in UAdFramework.UAdMobileAds.updateUIViewController() -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "171"
+                  endingLineNumber = "171"
+                  offsetFromSymbolStart = "47">
+               </Location>
+               <Location
+                  uuid = "8A8788FE-A28C-4C3B-A370-44703701478B - 2c768755ed08968a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in UAdFramework.UAdMobileAds.updateUIViewController() -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "47">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "079704D3-8061-4B1C-BB7F-7E16833BE34C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/UAdFramework/UAdMobileAds.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "updateUIViewController()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "079704D3-8061-4B1C-BB7F-7E16833BE34C - 73a9837d79253ec4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UAdFramework.UAdMobileAds.setIDFAAndRegistDevice() -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "172"
+                  endingLineNumber = "172"
+                  offsetFromSymbolStart = "229">
+               </Location>
+               <Location
+                  uuid = "079704D3-8061-4B1C-BB7F-7E16833BE34C - c0f1361c76a4d7d8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[1] = Value Promoted from Box&gt; of closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Swift.MainActor () -&gt; () in UAdFramework.UAdMobileAds.updateUIViewController() -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "175"
+                  endingLineNumber = "175"
+                  offsetFromSymbolStart = "115">
+               </Location>
+               <Location
+                  uuid = "079704D3-8061-4B1C-BB7F-7E16833BE34C - c0f1361c76a4d7d8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[1] = Value Promoted from Box&gt; of closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Swift.MainActor () -&gt; () in UAdFramework.UAdMobileAds.updateUIViewController() -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "175"
+                  endingLineNumber = "175"
+                  offsetFromSymbolStart = "169">
+               </Location>
+               <Location
+                  uuid = "079704D3-8061-4B1C-BB7F-7E16833BE34C - c0f1361c76a4d0e0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[1] = Value Promoted from Box&gt; of closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Swift.MainActor () -&gt; () in UAdFramework.UAdMobileAds.updateUIViewController() -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "167"
+                  endingLineNumber = "167"
+                  offsetFromSymbolStart = "115">
+               </Location>
+               <Location
+                  uuid = "079704D3-8061-4B1C-BB7F-7E16833BE34C - c0f1361c76a4d0e0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[1] = Value Promoted from Box&gt; of closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Swift.MainActor () -&gt; () in UAdFramework.UAdMobileAds.updateUIViewController() -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "167"
+                  endingLineNumber = "167"
+                  offsetFromSymbolStart = "169">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3299CE3C-C09F-40CA-B972-79857E56328D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/UAdFramework/UAdMobileAds.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "updateUIViewController()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3299CE3C-C09F-40CA-B972-79857E56328D - ac7680eb36b4c53b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UAdFramework.UAdMobileAds.updateUIViewController() -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "180"
+                  endingLineNumber = "180"
+                  offsetFromSymbolStart = "134">
+               </Location>
+               <Location
+                  uuid = "3299CE3C-C09F-40CA-B972-79857E56328D - 98b0c4e101d7438f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Swift.MainActor () -&gt; () in UAdFramework.UAdMobileAds.updateUIViewController() -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "183"
+                  endingLineNumber = "183"
+                  offsetFromSymbolStart = "75">
+               </Location>
+               <Location
+                  uuid = "3299CE3C-C09F-40CA-B972-79857E56328D - 98b0c4e101d7438f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Swift.MainActor () -&gt; () in UAdFramework.UAdMobileAds.updateUIViewController() -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "183"
+                  endingLineNumber = "183"
+                  offsetFromSymbolStart = "195">
+               </Location>
+               <Location
+                  uuid = "3299CE3C-C09F-40CA-B972-79857E56328D - 98b0c4e101d74541"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Swift.MainActor () -&gt; () in UAdFramework.UAdMobileAds.updateUIViewController() -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "173"
+                  endingLineNumber = "173"
+                  offsetFromSymbolStart = "75">
+               </Location>
+               <Location
+                  uuid = "3299CE3C-C09F-40CA-B972-79857E56328D - 98b0c4e101d74541"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 @Swift.MainActor () -&gt; () in UAdFramework.UAdMobileAds.updateUIViewController() -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "173"
+                  endingLineNumber = "173"
+                  offsetFromSymbolStart = "195">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DAC0C153-85AC-4917-846E-C07CA82598B3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Sources/UAdFramework/UAdMobileAds.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "getSetting(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DAC0C153-85AC-4917-846E-C07CA82598B3 - 120e80ba4385413b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in UAdFramework.UAdMobileAds.getSetting(completion: Swift.Optional&lt;(Swift.Bool, Swift.String) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "107"
+                  endingLineNumber = "107"
+                  offsetFromSymbolStart = "1358">
+               </Location>
+               <Location
+                  uuid = "DAC0C153-85AC-4917-846E-C07CA82598B3 - 2985bc3f11d0ea15"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor @Sendable () -&gt; () in closure #1 @Sendable () async -&gt; () in UAdFramework.UAdMobileAds.getSetting(completion: Swift.Optional&lt;(Swift.Bool, Swift.String) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "39">
+               </Location>
+               <Location
+                  uuid = "DAC0C153-85AC-4917-846E-C07CA82598B3 - 2985bc3f11d0eac8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor @Sendable () -&gt; () in closure #1 @Sendable () async -&gt; () in UAdFramework.UAdMobileAds.getSetting(completion: Swift.Optional&lt;(Swift.Bool, Swift.String) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "39">
+               </Location>
+               <Location
+                  uuid = "DAC0C153-85AC-4917-846E-C07CA82598B3 - 2985bc3f11d0ebe1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor @Sendable () -&gt; () in closure #1 @Sendable () async -&gt; () in UAdFramework.UAdMobileAds.getSetting(completion: Swift.Optional&lt;(Swift.Bool, Swift.String) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "TestUAd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ars/Dev/ios/UAdSDK_iOS/Sources/UAdFramework/UAdMobileAds.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "39">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

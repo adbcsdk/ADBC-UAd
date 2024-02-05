@@ -1,6 +1,5 @@
 //
-//  File 2.swift
-//  
+//  UserInfo.swift
 //
 //  Created by 신아람 on 1/11/24.
 //
@@ -54,14 +53,12 @@ class UserInfo {
         }
     }
     
-    var isDebug: Bool? {
+    var isDebug: Bool {
         get {
             return UserDefaults.standard[.isDebug]
         }
-        set(newIsDebug) {
-            if let isDebug = newIsDebug {
-                UserDefaults.standard[.isDebug] = isDebug
-            }
+        set(isDebug) {
+            UserDefaults.standard[.isDebug] = isDebug
         }
     }
     
@@ -69,10 +66,8 @@ class UserInfo {
         get {
             return UserDefaults.standard[.ump]
         }
-        set(newUmp) {
-            if let ump = newUmp {
-                UserDefaults.standard[.ump] = ump
-            }
+        set(ump) {
+            UserDefaults.standard[.ump] = ump
         }
     }
     

@@ -1,7 +1,6 @@
 //
-//  File.swift
+//  UAdMediaContent.swift
 //  
-//
 //  Created by 신아람 on 1/18/24.
 //
 

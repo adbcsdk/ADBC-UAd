@@ -1,7 +1,6 @@
 //
 //  UserDefaults+Extensions.swift
 //
-//
 //  Created by 신아람 on 1/11/24.
 //
 

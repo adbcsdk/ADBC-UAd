@@ -1,7 +1,6 @@
 //
-//  File.swift
+//  UAdNativeAd.swift
 //  
-//
 //  Created by 신아람 on 1/16/24.
 //
 
@@ -9,27 +8,24 @@ import UIKit
 import GoogleMobileAds
 
 public protocol UAdNativeAdDelegate : AnyObject {
-    func nativeAdDidRecordClick()
-
-    func nativeAdDidRecordImpression()
-
-    func nativeAdWillPresentScreen()
-
-    func nativeAdWillDismissScreen()
-
-    func nativeAdDidDismissScreen()
-
-    func nativeAdWillLeaveApplication()
+    func onNativeAdClicked()
+    func onNativeAdShow()
+    func onNativeAdDismiss()
 }
 
 @objcMembers
 public class UAdNativeAd: NSObject {
     
+    private let adsType = "native"
+    private let sessionID: String
+    private let status = StatusSendHelper()
+    
     private let nativeAd: GADNativeAd
     private var delegate: UAdNativeAdDelegate?
     
-    init(nativeAd: GADNativeAd) {
+    init(nativeAd: GADNativeAd, sessionID: String) {
         self.nativeAd = nativeAd
+        self.sessionID = sessionID
         super.init()
         
         self.nativeAd.delegate = self
@@ -82,26 +78,16 @@ public class UAdNativeAd: NSObject {
 
 extension UAdNativeAd: GADNativeAdDelegate {
     public func nativeAdDidRecordClick(_ nativeAd: GADNativeAd) {
-        delegate?.nativeAdDidRecordClick()
+        delegate?.onNativeAdClicked()
     }
 
     public func nativeAdDidRecordImpression(_ nativeAd: GADNativeAd) {
-        delegate?.nativeAdDidRecordImpression()
-    }
-
-    public func nativeAdWillPresentScreen(_ nativeAd: GADNativeAd) {
-        delegate?.nativeAdWillPresentScreen()
-    }
-
-    public func nativeAdWillDismissScreen(_ nativeAd: GADNativeAd) {
-        delegate?.nativeAdWillDismissScreen()
+        status.sendStatus(session: sessionID, adsType: adsType, status: .show, resInfo: nativeAd.responseInfo)
+        delegate?.onNativeAdShow()
     }
 
     public func nativeAdDidDismissScreen(_ nativeAd: GADNativeAd) {
-        delegate?.nativeAdDidDismissScreen()
-    }
-
-    public func nativeAdWillLeaveApplication(_ nativeAd: GADNativeAd) {
-        delegate?.nativeAdWillLeaveApplication()
+        status.sendStatus(session: sessionID, adsType: adsType, status: .close, resInfo: nativeAd.responseInfo)
+        delegate?.onNativeAdDismiss()
     }
 }

@@ -1,6 +1,5 @@
 //
-//  File.swift
-//  
+//  UAdBanner.swift
 //
 //  Created by 신아람 on 1/16/24.
 //
@@ -16,8 +15,7 @@ public class UAdBanner {
         if let ad = UserInfo.shared.adCodes.first(where: { $0.zone == zoneId }) {
             bannerView = UAdBannerView(adUnitID: ad.code, rootViewController: rootViewController, delegate: delegate)
         } else {
-            let error = NSError(domain: "UAdFramework", code: 999, userInfo: [NSLocalizedDescriptionKey: "Zone Id not found"])
-            delegate?.bannerViewDidFailToReceiveAdWithError(error: error)
+            delegate?.onBannerFailed(msg: "Zone Id not found")
         }
     }
     
@@ -31,6 +29,10 @@ public class UAdBanner {
     
     public func setSize(width: CGFloat, height: CGFloat) {
         bannerView?.setSize(size: GADAdSizeFromCGSize(CGSize(width: width, height: height)))
+    }
+    
+    public func setViewController(viewController: UIViewController) {
+        bannerView?.setViewController(viewController: viewController)
     }
     
     public func getView() -> UAdBannerView? {

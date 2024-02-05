@@ -1,14 +1,19 @@
 //
-//  File.swift
-//  
+//  UAdMobileAds.swift
 //
 //  Created by 신아람 on 1/11/24.
 //
 
-import Foundation
 import AdSupport
 import GoogleMobileAds
 import AppTrackingTransparency
+import UserMessagingPlatform
+import Foundation
+
+#if canImport(PAGAdSDK)
+import PAGAdSDK
+#endif
+
 
 public typealias UAdInitHandler = (UAdInitStatusCode) -> Void
 public enum UAdInitStatusCode {
@@ -30,6 +35,8 @@ open class UAdMobileAds {
     private var isLoading = false
     private var hand: UAdInitHandler?
     
+    var onResultInitialize: ((Bool, String) -> Void)?
+    
     open class func shared() -> UAdMobileAds {
         return _instance
     }
@@ -37,30 +44,19 @@ open class UAdMobileAds {
     private init() {
     }
     
-    public func initialize(appID: String, userID: String, isDebug: Bool) {
+    public func initialize(appID: String, userID: String, isDebug: Bool, completion: ((Bool, String) -> Void)?) {
         UserInfo.shared.appCode = appID
         UserInfo.shared.userID = userID
         self.isDebug = isDebug
         
-        GADMobileAds.sharedInstance().start { status in
-            
-            let adapterStatuses = status.adapterStatusesByClassName
-            for adapter in adapterStatuses {
-                let adapterStatus = adapter.value
-                
-                print("Adapter Name: \(adapter.key), Description: \(adapterStatus.description), Latency: \(adapterStatus.latency)")
-            }
-            
-        }
-        
-        getSetting()
+        getSetting(completion: completion)
     }
     
     public func setData(completion: UAdInitHandler?) {
         self.hand = completion
     }
     
-    private func getSetting() {
+    private func getSetting(completion: ((Bool, String) -> Void)?) {
 
         if isLoading { return }
         Task {
@@ -80,21 +76,12 @@ open class UAdMobileAds {
 //                } else {
 //                    print("FBAudienceNetworkAds 버전을 가져올 수 없습니다.")
 //                }
-//                
-//                if let path = Bundle.main.path(forResource: "Package", ofType: "swift"),
-//                    let content = try? String(contentsOfFile: path),
-//                    let versionRange = content.range(of: #"\.package\(.*"AdsGlobalPackage", from: "(.*?)".*\)"#, options: .regularExpression),
-//                    let version = String(content[versionRange]).components(separatedBy: "\"").dropFirst().first {
-//                    print("AdsGlobalPackage 버전: \(version)")
-//                } else {
-//                    print("AdsGlobalPackage fail")
-//                }
                 
                 
                 let param = SettingParam(adtracking: isTracking, version: getVersion())
-                print("data = \(param.dictionary)")
-
                 let result: Setting = try await NetworkManager.shared.request(subURL: "setting.html", params: param.dictionary, method: .get)
+                
+                isLoading = false
                 
                 if let debug = Bool(result.data.debug) {
                     UserInfo.shared.isDebug = (debug || isDebug)
@@ -104,12 +91,26 @@ open class UAdMobileAds {
                 
                 if let ump = Bool(result.data.ump) {
                     UserInfo.shared.ump = ump
+                    
+                    if(true) {
+                        DispatchQueue.main.async {
+                            self.updateUIViewController()
+                        }
+                    } else {
+                        await GADMobileAds.sharedInstance().start()
+                    }
                 }
                 UserInfo.shared.adCodes = result.data.ads
                 
-                isLoading = false
+                if let completion = completion {
+                    completion(true, "")
+                }
+                
             } catch let error {
                 print(error.localizedDescription)
+                if let completion = completion {
+                    completion(false, error.localizedDescription)
+                }
             }
         }
         
@@ -122,7 +123,12 @@ open class UAdMobileAds {
         
 //        let versionInfo = VersionInfo(sdkVer: "1.0.0", originVer: gAdVer, mediations: VersionInfo.Mediations(applovin: ALSdk.version(), pangle: "5.5.0.7", unityads: UnityAds.getVersion(), meta: "6.14.0"))
         
-        let versionInfo = VersionInfo(sdkVer: "1.0.0", originVer: gAdVer, mediations: VersionInfo.Mediations(applovin: "", pangle: "", unityads: "", meta: ""))
+        var pangleVer = ""
+        #if canImport(PAGAdSDK)
+        pangleVer = PAGSdk.sdkVersion
+        #endif
+        
+        let versionInfo = VersionInfo(sdkVer: "1.0.0", originVer: gAdVer, mediations: VersionInfo.Mediations(applovin: "", pangle: pangleVer, unityads: "", meta: ""))
 
         do {
             let jsonData = try JSONEncoder().encode(versionInfo)
@@ -147,6 +153,32 @@ open class UAdMobileAds {
             UserInfo.shared.idfa = vm.getIDFAStr()
         } else {
             isTracking = false
+        }
+    }
+    
+    private func updateUIViewController() {
+        
+        DispatchQueue.main.async {
+            
+            var uiViewController = UIApplication.getMostTopViewController()!
+            
+            UMPConsentInformation.sharedInstance.requestConsentInfoUpdate(with: nil) {requestConsentError in
+                if let consentError = requestConsentError { // 요청 실패
+                    print("Error: \(consentError.localizedDescription)")
+                    return
+                }
+                            
+                UMPConsentForm.loadAndPresentIfRequired(from: uiViewController ) {loadAndPresentError in
+                    if let consentError = loadAndPresentError { // 팝업창 표시 실패
+                        print("Error: \(consentError.localizedDescription)")
+                        return
+                    }
+
+                    if UMPConsentInformation.sharedInstance.canRequestAds {
+                        GADMobileAds.sharedInstance().start()
+                    }
+                }
+            }
         }
     }
 }

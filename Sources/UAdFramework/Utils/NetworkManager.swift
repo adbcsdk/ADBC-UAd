@@ -1,6 +1,5 @@
 //
 //  NetworkManager.swift
-//  GreenPFramework
 //
 //  Created by 심현지 on 2023/11/14.
 //
@@ -27,6 +26,10 @@ class NetworkManager {
                                              parameters: params,
                                              encoding: method == .post ? JSONEncoding.default : URLEncoding.queryString)
             .validate(statusCode: 200..<300)
+        
+        
+        LogUtil.shared.log(.debug, msg: "req url : \(request.request?.url)")
+        
         let response: DataResponse<T, AFError> = await request.serializingDecodable(T.self).response
         switch response.result {
         case .success(let value):

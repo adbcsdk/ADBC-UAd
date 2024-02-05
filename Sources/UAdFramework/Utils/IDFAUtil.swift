@@ -1,6 +1,5 @@
 //
 //  IDFAUtil.swift
-//  GreenPFramework
 //
 //  Created by 심현지 on 2023/11/14.
 //

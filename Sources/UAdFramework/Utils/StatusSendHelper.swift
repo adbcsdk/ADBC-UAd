@@ -1,7 +1,6 @@
 //
-//  File.swift
+//  StatusSendHelper.swift
 //  
-//
 //  Created by 신아람 on 1/16/24.
 //
 
@@ -34,46 +33,37 @@ class StatusSendHelper {
     
     private var isLoading = false
     
-    func sendStatus(adsType: String, status: UAdStatusCode, resInfo: GADResponseInfo?) {
-
+    func sendStatus(session: String, adsType: String, status: UAdStatusCode, resInfo: GADResponseInfo?) {
+        
+        if isLoading { return }
+        
+        var order = 0
+        var mediationName = ""
         if let info = resInfo {
-            aa(resInfo: info)
-        }
-        
-//        if isLoading { return }
-//        Task {
-//            do {
-//                isLoading = true
-//                
-//                let param = StatusParam(sessionId: sessionID.uuidString, type: adsType, size: "", status: status.rawValue, order: 0, mediation: <#T##String#>)
-//                print("data = \(param.dictionary)")
-//
-//                let result: APIResult = try await NetworkManager.shared.request(subURL: "status.html", params: param.dictionary, method: .get)
-//                
-//                isLoading = false
-//            } catch let error {
-//                print(error.localizedDescription)
-//            }
-//        }
-    }
-    
-    func aa(resInfo: GADResponseInfo) {
-        
-        
-        if let medInfo = resInfo.responseIdentifier {
-            print("Mediation Info: \(medInfo)")
-        } else {
-            print("No Mediation Info")
-        }
-        
-        if !resInfo.adNetworkInfoArray.isEmpty {
-                for adNetworkInfo in resInfo.adNetworkInfoArray {
-                    print("Ad Network Class Name: \(adNetworkInfo.adNetworkClassName ?? "Unknown")")
-                    // 추가 정보 출력
+            mediationName = (info.loadedAdNetworkResponseInfo?.adSourceName)!
+            for (index, adNetworkInfo) in info.adNetworkInfoArray.enumerated() {
+                if(mediationName == adNetworkInfo.adSourceName) {
+                    order = index
+                    break;
                 }
-            } else {
-                print("Ad Network Info Array is empty.")
             }
+        }
         
+        let localOrder = order
+        let localName = mediationName
+        
+        Task {
+            do {
+                isLoading = true
+                
+                let param = StatusParam(sessionId: sessionID.uuidString, type: adsType, size: "", status: status.rawValue, order: localOrder, mediation: localName)
+
+                let result: APIResult = try await NetworkManager.shared.request(subURL: "status.html", params: param.dictionary, method: .get)
+                
+                isLoading = false
+            } catch let error {
+                print(error.localizedDescription)
+            }
+        }
     }
 }
