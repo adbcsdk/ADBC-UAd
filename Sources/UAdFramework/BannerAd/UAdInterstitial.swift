@@ -64,6 +64,7 @@ public class UAdInterstitial: NSObject {
             interstitial?.fullScreenContentDelegate = self
             isLoaded = true
             
+            delegate?.onFullScreenLoaded()
             status.sendStatus(session: sessionID, adsType: self.adsType, status: UAdStatusCode.load, resInfo: interstitial?.responseInfo)
         })
     }

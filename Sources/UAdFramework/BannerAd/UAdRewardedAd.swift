@@ -56,6 +56,7 @@ public class UAdRewardedAd: NSObject {
             rewardedAd?.fullScreenContentDelegate = self
             isLoaded = true
             
+            delegate?.onFullScreenLoaded()
             status.sendStatus(session: sessionID, adsType: self.adsType, status: UAdStatusCode.load, resInfo: nil)
         })
     }
