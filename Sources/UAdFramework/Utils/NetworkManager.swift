@@ -15,7 +15,7 @@ class NetworkManager {
 
     private let sessionManager: Session = {
         let configuration = URLSessionConfiguration.default
-        let sessionManager = Session(configuration: configuration, interceptor: APIInterceptor())
+        let sessionManager = Session(configuration: configuration, interceptor: APIInterceptor(), eventMonitors: [RequestLogger()])
         return sessionManager
     }()
     
@@ -26,9 +26,6 @@ class NetworkManager {
                                              parameters: params,
                                              encoding: method == .post ? JSONEncoding.default : URLEncoding.queryString)
             .validate(statusCode: 200..<300)
-        
-        
-        LogUtil.shared.log(.debug, msg: "req url : \(request.request?.url)")
         
         let response: DataResponse<T, AFError> = await request.serializingDecodable(T.self).response
         switch response.result {
@@ -106,6 +103,23 @@ final class APIInterceptor: RequestInterceptor {
             completion(.retryWithDelay(timeDelay))
         } else {
             completion(.doNotRetry)
+        }
+    }
+}
+
+class RequestLogger: EventMonitor {
+    func requestDidFinish(_ request: Request) {
+        if let urlRequest = request.request,
+           let url = urlRequest.url,
+           let httpMethod = urlRequest.httpMethod {
+            LogUtil.shared.log(.debug, msg: "req url : \(url)")
+        }
+    }
+    
+    func request<Value>(_ request: DataRequest, didParseResponse response: DataResponse<Value, AFError>) {
+        if let data = response.data,
+           let stringData = String(data: data, encoding: .utf8) {
+//            print("Response Data: \(stringData)")
         }
     }
 }

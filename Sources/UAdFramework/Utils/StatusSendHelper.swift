@@ -40,11 +40,13 @@ class StatusSendHelper {
         var order = 0
         var mediationName = ""
         if let info = resInfo {
-            mediationName = (info.loadedAdNetworkResponseInfo?.adSourceName)!
-            for (index, adNetworkInfo) in info.adNetworkInfoArray.enumerated() {
-                if(mediationName == adNetworkInfo.adSourceName) {
-                    order = index
-                    break;
+            if let name = info.loadedAdNetworkResponseInfo?.adSourceName {
+                for (index, adNetworkInfo) in info.adNetworkInfoArray.enumerated() {
+                    if(name == adNetworkInfo.adSourceName) {
+                        order = index
+                        mediationName = name
+                        break;
+                    }
                 }
             }
         }
